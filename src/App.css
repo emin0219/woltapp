@@ -1,38 +1,174 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media only screen and (max-width: 480px) {
+  .todayHeader {
+    width: 100%;
+    background-color: #f1f4f8;
+    height: 55px;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+  .todayHeaderTextCont {
+    height: 100%;
+    width: 40%;
+    display: flex;
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
   }
-  to {
-    transform: rotate(360deg);
+
+  .todayCont {
+    height: 100%;
+    width: 40%;
+    color: #4F6C92;
+    display: flex;
+    font-weight: bold;
+    justify-content: right;
+    align-items: center;
+  }
+
+  .todayShiftCont {
+    height: 100%;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #a4b8d3;
+  }
+
+  .shiftCont {
+    height: 70px;
+    background-color: #f7f8fb;
+    border-top: 1px solid #cbd2e1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .shiftTimeCont {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .shiftTime {
+    height: 60%;
+    width: 80%;
+  }
+
+  .shiftHoursMins {
+    height: 50%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #4F6C92;
+  }
+
+  .shiftLocation {
+    height: 50%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #a4b8d3;
+  }
+
+  .cancelCont {
+    height: 100%;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cancel {
+    background-color: #f7f8fb;
+    border: 1px solid #e2006a;
+    color: #e2006a;
+    border-radius: 10px;
+    height: 35%;
+    width: 50%;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .footer {
+    height: 70px;
+    width: 100%;
+    bottom: 0;
+    background-color: #fafafa;
+    border-top: 1px solid #cbd2e1;
+    display: flex;
+  }
+
+  .myShifts {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #004fb4;
+    text-decoration: none;
+  }
+
+  .available {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #bcbcbc;
+    text-decoration: none;
+  }
+
+  .citiesCont {
+    height: 100px;
+    color: #f7f8fb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid #cbd2e1;
+  }
+
+  .city {
+    height: 100%;
+    width: 33.3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #004fb4;
+    font-size: larger;
+    text-decoration: none;
+  }
+
+  .book {
+    background-color: #f7f8fb;
+    border: 1px solid #16a64d;
+    color: #16a64d;
+    border-radius: 10px;
+    height: 40%;
+    width: 50%;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .availableShiftCont {
+    height: 55px;
+    background-color: #f7f8fb;
+    border-top: 1px solid #cbd2e1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .availableShiftTimeCont {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .availableShiftTime {
+    height: 60%;
+    width: 80%;
+    display: flex;
+    align-items: center;
   }
 }
