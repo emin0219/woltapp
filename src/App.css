@@ -105,8 +105,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #004fb4;
+
     text-decoration: none;
+  }
+
+  .activeShift {
+    color: #004fb4;
   }
 
   .available {
@@ -115,7 +119,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #bcbcbc;
+
     text-decoration: none;
   }
 
@@ -134,7 +138,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #004fb4;
+    color: #bcbcbc;
     font-size: larger;
     text-decoration: none;
   }

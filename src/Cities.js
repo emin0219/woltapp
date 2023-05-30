@@ -1,15 +1,48 @@
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom";
 
 function Cities() {
-    return (
-        <div className='citiesCont'>
-            <Link to="/available" className="city">Helsinki</Link>
+  return (
+    <div className="citiesCont">
+      <NavLink
+        to="/available"
+        className="city"
+        style={({ isActive }) => {
+          return {
+            fontWeight: isActive ? "bold" : "",
+            color: isActive ? "#004fb4" : "#bcbcbc",
+          };
+        }}
+      >
+        Helsinki
+      </NavLink>
 
-            <Link to="/tampere" className="city">Tampere</Link>
+      <NavLink
+        to="/tampere"
+        className="city"
+        style={({ isActive }) => {
+          return {
+            fontWeight: isActive ? "bold" : "",
+            color: isActive ? "#004fb4" : "#bcbcbc",
+          };
+        }}
+      >
+        Tampere
+      </NavLink>
 
-            <Link to="/turku" className="city">Turku</Link>
-        </div>
-    )
+      <NavLink
+        to="/turku"
+        className="city"
+        style={({ isActive }) => {
+          return {
+            fontWeight: isActive ? "bold" : "",
+            color: isActive ? "#004fb4" : "#bcbcbc",
+          };
+        }}
+      >
+        Turku
+      </NavLink>
+    </div>
+  );
 }
 
-export default Cities
+export default Cities;
