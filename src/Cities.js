@@ -4,7 +4,7 @@ function Cities() {
   return (
     <div className="citiesCont">
       <NavLink
-        to="/available"
+        to="/available/helsinki"
         className="city"
         style={({ isActive }) => {
           return {
@@ -17,7 +17,7 @@ function Cities() {
       </NavLink>
 
       <NavLink
-        to="/tampere"
+        to="/available/tampere"
         className="city"
         style={({ isActive }) => {
           return {
@@ -30,7 +30,7 @@ function Cities() {
       </NavLink>
 
       <NavLink
-        to="/turku"
+        to="/available/turku"
         className="city"
         style={({ isActive }) => {
           return {

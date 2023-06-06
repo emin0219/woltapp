@@ -6,7 +6,6 @@ import "./App.css";
 
 function Available() {
   const getTime = (obj) => {
-    console.log(obj)
     const startDate = DateTime.fromMillis(obj?.startTime);
     const startHours = startDate.hour;
     const startMins = startDate.minute;

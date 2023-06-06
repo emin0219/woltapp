@@ -4,9 +4,8 @@ import { DateTime } from "luxon";
 
 import "./App.css";
 
-function Helsinki() {
-
-    const getHelsinki = (obj) => {
+function Tampere() {
+    const getTampere = (obj) => {
         const startDate = DateTime.fromMillis(obj?.startTime);
         const startHours = startDate.hour;
         const startMins = startDate.minute;
@@ -32,9 +31,9 @@ function Helsinki() {
 
         const time = `${startTime} - ${endTime}`;
 
-        
 
-        if (obj.area === "Helsinki") {
+
+        if (obj.area === "Tampere") {
 
 
             return (
@@ -53,6 +52,7 @@ function Helsinki() {
             )
         }
     }
+
     return (
         <div>
             <Cities />
@@ -61,9 +61,9 @@ function Helsinki() {
                     <div className="todayCont">Today</div>
                 </div>
             </div>
-            {shifts.map(getHelsinki)}
+            {shifts.map(getTampere)}
         </div>
     )
 }
 
-export default Helsinki
+export default Tampere
