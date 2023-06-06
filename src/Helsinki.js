@@ -5,7 +5,7 @@ import { DateTime } from "luxon";
 import "./App.css";
 
 function Helsinki() {
-
+    
     const getHelsinki = (obj) => {
         const startDate = DateTime.fromMillis(obj?.startTime);
         const startHours = startDate.hour;
