@@ -10,8 +10,6 @@ function Shift() {
     const endDate = DateTime.fromMillis(obj.endTime);
     const endHours = endDate.hour;
     const endMins = endDate.minute;
-    const startday = startDate.day;
-    const ss = startDate.month;
 
     let startTime = "";
 
