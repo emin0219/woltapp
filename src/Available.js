@@ -1,10 +1,22 @@
 import Cities from "./Cities";
-
+import { useState } from "react";
 import { DateTime } from "luxon";
 import { shifts } from "./mockData";
 import "./App.css";
 
 function Available() {
+
+  const [bookedShifts, setBookedShifts] = useState([]);
+
+  const handleBookShift = (shiftId) => {
+    const shift = shifts.find((s) => s.id === shiftId);
+
+    if (shift && !shift.booked) {
+      shift.booked = true;
+      setBookedShifts((prevBookedShifts) => [...prevBookedShifts, shift]);
+    }
+  };
+
   const getTime = (obj) => {
     const startDate = DateTime.fromMillis(obj?.startTime);
     const startHours = startDate.hour;
@@ -40,7 +52,13 @@ function Available() {
             </div>
           </div>
           <div className="cancelCont">
-            <button className="book">Book</button>
+            <button
+              className="book"
+              onClick={() => {
+                handleBookShift(obj.id)
+              }}
+              disabled={obj.booked} 
+              style={{ color: obj.booked ? "#cbd2e1" : "#16a64d", borderColor: obj.booked ? "#cbd2e1" : "#16a64d" }}>{obj.booked ? "Booked" : "Book"}</button>
           </div>
         </div>
       </div>

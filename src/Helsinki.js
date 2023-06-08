@@ -1,12 +1,26 @@
 import { shifts } from "./mockData";
 import Cities from "./Cities";
 import { DateTime } from "luxon";
-
+import { useState } from "react";
 import "./App.css";
 
 function Helsinki() {
-    
+
+    const [bookedShifts, setBookedShifts] = useState([]);
+
+    const handleBookShift = (shiftId) => {
+        const shift = shifts.find((s) => s.id === shiftId);
+
+        if (shift && !shift.booked) {
+            shift.booked = true;
+            setBookedShifts((prevBookedShifts) => [...prevBookedShifts, shift]);
+        }
+    };
+
     const getHelsinki = (obj) => {
+
+
+
         const startDate = DateTime.fromMillis(obj?.startTime);
         const startHours = startDate.hour;
         const startMins = startDate.minute;
@@ -32,7 +46,7 @@ function Helsinki() {
 
         const time = `${startTime} - ${endTime}`;
 
-        
+
 
         if (obj.area === "Helsinki") {
 
@@ -46,8 +60,13 @@ function Helsinki() {
                             </div>
                         </div>
                         <div className="cancelCont">
-                            <button className="book">Book</button>
+                            <button 
+                                className="book" 
+                                onClick={() => handleBookShift(obj.id)} 
+                                disabled={obj.booked} 
+                                style={{ color: obj.booked ? "#cbd2e1" : "#16a64d", borderColor: obj.booked ? "#cbd2e1" : "#16a64d" }}>{obj.booked ? "Booked" : "Book"}</button>
                         </div>
+
                     </div>
                 </div>
             )

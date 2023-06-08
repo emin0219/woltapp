@@ -1,17 +1,19 @@
 import { DateTime } from "luxon";
 import { shifts } from "./mockData";
 import "./App.css";
+import { useState } from "react";
 
 function Shift() {
+  
+  const [shift, setShift] = useState([])
   const getTime = (obj) => {
+
     const startDate = DateTime.fromMillis(obj.startTime);
     const startHours = startDate.hour;
     const startMins = startDate.minute;
     const endDate = DateTime.fromMillis(obj.endTime);
     const endHours = endDate.hour;
     const endMins = endDate.minute;
-    const startday = startDate.day;
-    const ss = startDate.month;
 
     let startTime = "";
 
@@ -31,21 +33,32 @@ function Shift() {
 
     const time = `${startTime} - ${endTime}`;
 
-    return (
-      <div key={obj.id}>
-        <div className="shiftCont">
-          <div className="shiftTimeCont">
-            <div className="shiftTime">
-              <div className="shiftHoursMins">{time}</div>
-              <div className="shiftLocation">{obj.area}</div>
+    const handleCancel = () => {
+      const shiftIndex = shifts.findIndex((shift) => shift.id === obj.id);
+
+      if (shiftIndex !== -1) {
+        shifts[shiftIndex].booked = false;
+        setShift([...shifts]);
+      }
+    };
+
+    if(obj.booked === true) {
+      return (
+        <div key={obj.id}>
+          <div className="shiftCont">
+            <div className="shiftTimeCont">
+              <div className="shiftTime">
+                <div className="shiftHoursMins">{time}</div>
+                <div className="shiftLocation">{obj.area}</div>
+              </div>
+            </div>
+            <div className="cancelCont">
+              <button className="cancel" onClick={handleCancel}>Cancel</button>
             </div>
           </div>
-          <div className="cancelCont">
-            <button className="cancel">Cancel</button>
-          </div>
         </div>
-      </div>
-    );
+      );
+    }
   };
 
   return (
