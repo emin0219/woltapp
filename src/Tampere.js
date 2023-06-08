@@ -12,7 +12,6 @@ function Tampere() {
         const shift = shifts.find((s) => s.id === shiftId);
 
         if (shift && !shift.booked) {
-            console.log(shift && !shift.booked)
             shift.booked = true;
             setBookedShifts((prevBookedShifts) => [prevBookedShifts, shift]);
         }

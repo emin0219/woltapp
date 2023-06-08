@@ -3,9 +3,13 @@ import { shifts } from "./mockData";
 import "./App.css";
 import { useState } from "react";
 
+let shiftCount = 0
+let hoursCount = 0
+
 function Shift() {
   
   const [shift, setShift] = useState([])
+
   const getTime = (obj) => {
 
     const startDate = DateTime.fromMillis(obj.startTime);
@@ -34,15 +38,19 @@ function Shift() {
     const time = `${startTime} - ${endTime}`;
 
     const handleCancel = () => {
+      shiftCount = 0
       const shiftIndex = shifts.findIndex((shift) => shift.id === obj.id);
-
       if (shiftIndex !== -1) {
         shifts[shiftIndex].booked = false;
-        setShift([...shifts]);
+        setShift([shifts]);
       }
+    
     };
 
     if(obj.booked === true) {
+      shiftCount++
+      
+
       return (
         <div key={obj.id}>
           <div className="shiftCont">
@@ -61,12 +69,21 @@ function Shift() {
     }
   };
 
+  const setShiftNumber = () => {
+    if(shiftCount > 1) {
+      return `${shiftCount} shifts`
+    }
+    else {
+      return `${shiftCount} shift`
+    }
+  }
+
   return (
     <div>
       <div className="todayHeader">
         <div className="todayHeaderTextCont">
           <div className="todayCont">Today</div>
-          <div className="todayShiftCont">2 shifts, 4h</div>
+          <div className="todayShiftCont">{setShiftNumber()}</div>
         </div>
       </div>
       {shifts.map(getTime)}

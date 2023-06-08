@@ -15,6 +15,7 @@ function Available() {
       shift.booked = true;
       setBookedShifts((prevBookedShifts) => [...prevBookedShifts, shift]);
     }
+    
   };
 
   const getTime = (obj) => {
@@ -24,6 +25,7 @@ function Available() {
     const endDate = DateTime.fromMillis(obj?.endTime);
     const endHours = endDate.hour;
     const endMins = endDate.minute;
+    
 
     let startTime = "";
 
